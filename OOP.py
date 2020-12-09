@@ -13,6 +13,9 @@ class Car:
     def __str__(self):
         return f'{self.make} {self.model} {self.year}'
 
+    def __eq__(self, other):
+        return self.make == other.make and self.model == other.model
+
     def stop(self):
         if self.is_moving:
             print("the car has stopped")
@@ -38,4 +41,10 @@ class Car:
             return True
 
 car_one = Car("Corolla", 2005)
-print(car_one)
+car_two = Car("Camry", 2017)
+car_three = Car("Desoto", 1948)
+
+if car_one == car_two:
+    print("equal")
+else:   
+    print("not equal")
