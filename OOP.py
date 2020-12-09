@@ -10,6 +10,9 @@ class Car:
         self.gas = 100
         self.is_moving = False
 
+    def __str__(self):
+        return f'{self.make} {self.model} {self.year}'
+
     def stop(self):
         if self.is_moving:
             print("the car has stopped")
@@ -35,8 +38,4 @@ class Car:
             return True
 
 car_one = Car("Corolla", 2005)
-car_one.stop()
-car_one.go('slow')
-car_one.go("fast")
-car_one.stop()
-car_one.stop()
+print(car_one)
